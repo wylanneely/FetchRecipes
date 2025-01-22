@@ -1,9 +1,10 @@
 # FetchRecipes
 FetchRecipe take home project
 
-### Summary: Include screen shots or a video of your app highlighting its features
+### Summary: Recipe App is a simple app that helps you find the best recipes from around the world. Just swipe to refresh, watch the video or tap source to read how to do it. Below is a link to a small preview of this simple app.
+https://drive.google.com/file/d/1G-rHyGsHnhETG97vYkOgaHHkw3sXUPVq/view?usp=sharing
 
-### Focus Areas: I focused on refactoring the ContentView and RecipeDetailView code to make them simple to read and maintain. I also wanted the NetworkController to be robust, yet flexible for future use cases
+### Focus Areas: I focused on refactoring the ContentView and RecipeDetailView code to make them simple to read and maintain. I also wanted the NetworkController and ImageLoader to be robust, yet flexible for future use cases.
 
 ### Time Spent: I spent about 5 hours spread over the course of a week on this project.
 
