@@ -8,7 +8,7 @@ https://drive.google.com/file/d/1G-rHyGsHnhETG97vYkOgaHHkw3sXUPVq/view?usp=shari
 
 ### Time Spent: I spent about 5 hours spread over the course of a week on this project.
 
-### Trade-offs and Decisions: Instead of caching the entire recipe, I decided to cache just the images for each recipe. This was due to the images being the heaviest elements to download and convert from data. I also chose to create my own image loader instead of using AsyncImage to provide better control over caching and loading, encapsulating this logic outside of the ContentView.
+### Trade-offs and Decisions: Instead of caching the entire recipe, I decided to cache just the images for each recipe. This was due to the images being the heaviest elements to download and convert from data. I also chose to create my own ImageLoader instead of using AsyncImage to provide better control over caching and loading, encapsulating this logic outside of the ContentView.
 
 ### Weakest Part of the Project: I could have added more tests and tags for better organization. I could improve error logging and enhance the Views to handle dependency injection more efficiently. Also could spend more time making the UX/UI better.
 
