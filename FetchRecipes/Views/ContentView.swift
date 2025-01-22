@@ -5,12 +5,13 @@
 //  Created by Wylan L Neely on 1/14/25.
 //
 import SwiftUI
+import os
 
 struct ContentView: View {
     
     @State var recipes: [Recipe] = []
     @State private var errorMessage: String?
-    @State var selectedRecipe: Recipe? // Tracks the selected recipe
+    @State var selectedRecipe: Recipe?
     
     var onRecipeSelected: ((Recipe) -> Void)? // Callback for testing
     
@@ -21,7 +22,11 @@ struct ContentView: View {
                 .font(.largeTitle)
             
             if let errorMessage = errorMessage {
-                Text("Recipes Not Found. Error: \(errorMessage)")
+                Text("Recipes Not Found.")
+                    .onAppear {
+                        // Log error
+                        os_log("Error: %@", log: .default, type: .error, errorMessage)
+                    }
             } else {
                 List(recipes) { recipe in
                     Button(action: {
@@ -45,13 +50,13 @@ struct ContentView: View {
         }
     }
         
-        private func loadRecipes() async {
-                do {
-                    recipes = try await NetworkController.fetchRecipes()
-                } catch {
-                    errorMessage = error.localizedDescription
-                }
+    private func loadRecipes() async {
+            do {
+                recipes = try await NetworkController.fetchRecipes()
+            } catch {
+                errorMessage = error.localizedDescription
             }
+        }
     
     
     private func shuffleRecipes() {
