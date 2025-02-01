@@ -46,11 +46,13 @@ class NetworkController {
     }
     
     
+    
+    
     static func fetchRecipes() async throws -> [Recipe] {
            guard let url = URL(string: "https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json") else {
                throw URLError(.badURL)
            }
-           
+       
            let data = try await performRequest(for: url, httpMethod: .get)
            
           //test this area

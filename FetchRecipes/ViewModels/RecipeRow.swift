@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct RecipeRow: View {
+    
     let recipe: Recipe
     @StateObject private var imageLoader = ImageLoader()
 
@@ -21,6 +22,7 @@ struct RecipeRow: View {
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
             } else {
+                //Place Holder Image
                 Circle()
                     .fill(Color.gray.opacity(0.3))
                     .frame(width: 100, height: 100)
@@ -30,7 +32,6 @@ struct RecipeRow: View {
                         }
                     }
             }
-
             Text(recipe.name)
                 .font(.headline)
                 .padding(.top, 8)
@@ -38,4 +39,5 @@ struct RecipeRow: View {
         .padding(.vertical, 10)
     }
 }
+
 

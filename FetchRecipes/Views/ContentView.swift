@@ -22,7 +22,7 @@ struct ContentView: View {
                 .font(.largeTitle)
             
             if let errorMessage = errorMessage {
-                Text("Recipes Not Found.")
+                Text(errorMessage)
                     .onAppear {
                         // Log error
                         os_log("Error: %@", log: .default, type: .error, errorMessage)
@@ -31,7 +31,7 @@ struct ContentView: View {
                 List(recipes) { recipe in
                     Button(action: {
                         selectedRecipe = recipe
-                        onRecipeSelected?(recipe) // To test when a reciept is selected
+                       // onRecipeSelected?(recipe) // To test when a reciept is selected
                     }) {
                         RecipeRow(recipe: recipe)
                     }
@@ -63,5 +63,6 @@ struct ContentView: View {
             recipes.shuffle()
         }
 }
+
 
 

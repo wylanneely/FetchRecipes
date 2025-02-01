@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct RecipeDetailView: View {
     let recipe: Recipe
     @StateObject private var imageLoader = ImageLoader()
